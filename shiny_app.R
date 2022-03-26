@@ -116,7 +116,7 @@ server <- function(input, output, session) {
           output = "data/s_out_ws.shp")
   
         # READ WS ####
-        new_ws <- read_sf("data/s_out_ws.shp")
+        new_ws <- read_sf("data/s_out_ws.shp") %>% st_make_valid()
   
         # CUTBLOCKS ####
         incProgress(8/10, detail = "Download cutblocks...")
